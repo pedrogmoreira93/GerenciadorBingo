@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Gerenciador de Bingo</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/thumbnail-gallery.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <h1 class="my-4 text-center text-lg-left">Gerenciador de Cartelas</h1>
+
+
+    <div class="row">
+        <div class="col">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#adiciona">
+              Adicionar Cartela
+            </button>
+
+            <button type="button" class="btn btn-success" onclick="exibe()">
+              Verificar Numeros Sorteados
+            </button>
+        </div>
+    </div>
+<hr>
+<div class="row">
+    <div class="col">
+        <input type="number" id="novo_numero">
+        <button type="button" class="btn btn-primary" onclick="adicionar_numero()">
+          Adicionar Numero
+        </button>
+    </div>
+</div>
+<hr>
+      <div class="row text-center text-lg-left" id="cartelas">
+
+        </div>
+      </div>
+    <!-- /.container -->
+
+    <!-- Modal Adicionar -->
+
+    <div class="modal" id="adiciona" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div class="row">
+            <input class="form-control" placeholder="Nome" type="text" name="" id="mnome">
+        </div>
+
+          <div class="row">
+            <div class="col text-center">
+                  B
+            </div>
+                <div class="col text-center">
+                  I
+                </div>
+
+                <div class="col text-center">
+                    N
+                  </div>
+                  <div class="col text-center">
+                    G
+                  </div>
+
+                  <div class="col text-center">
+                      O
+                    </div>
+          </div>
+
+          <div class="row">
+              <!-- B -->
+              <div class="col">
+                <input class="inputs my-narrow-input form-control" max="99" min="0" type="number" id="mb1">
+                <input class="inputs my-narrow-input form-control" max="99" min="0" type="number" id="mb2">
+                <input class="inputs my-narrow-input form-control" max="99" min="0" type="number" id="mb3">
+                <input class="inputs my-narrow-input form-control" max="99" min="0" type="number" id="mb4">
+                <input class="inputs my-narrow-input form-control" max="99" min="0" type="number" id="mb5">
+              </div>
+              <div class="col">
+                  <input class="inputs my-narrow-input form-control" max="99" min="0" type="number" id="mi1">
+                  <input class="inputs my-narrow-input form-control" max="99" min="0" type="number" id="mi2">
+                  <input class="inputs my-narrow-input form-control" max="99" min="0" type="number" id="mi3">
+                  <input class="inputs my-narrow-input form-control" max="99" min="0" type="number" id="mi4">
+                  <input class="inputs my-narrow-input form-control" max="99" min="0" type="number" id="mi5">
+              </div>
+              <div class="col">
+                  <input class="inputs my-narrow-input form-control" max="99" min="0" type="number" id="mn1">
+                  <input class="inputs my-narrow-input form-control" max="99" min="0" type="number" id="mn2">
+                  <input class="inputs my-narrow-input form-control" max="99" min="0" type="number" id="mn3" disabled>
+                  <input class="inputs my-narrow-input form-control" max="99" min="0" type="number" id="mn4">
+                  <input class="inputs my-narrow-input form-control" max="99" min="0" type="number" id="mn5">
+              </div>
+              <div class="col">
+                  <input class="inputs my-narrow-input form-control" max="99" min="0" type="number" id="mg1">
+                  <input class="inputs my-narrow-input form-control" max="99" min="0" type="number" id="mg2">
+                  <input class="inputs my-narrow-input form-control" max="99" min="0" type="number" id="mg3">
+                  <input class="inputs my-narrow-input form-control" max="99" min="0" type="number" id="mg4">
+                  <input class="inputs my-narrow-input form-control" max="99" min="0" type="number" id="mg5">
+              </div>
+              <div class="col">
+                  <input class="inputs my-narrow-input form-control" max="99" min="0" type="number" id="mo1">
+                  <input class="inputs my-narrow-input form-control" max="99" min="0" type="number" id="mo2">
+                  <input class="inputs my-narrow-input form-control" max="99" min="0" type="number" id="mo3">
+                  <input class="inputs my-narrow-input form-control" max="99" min="0" type="number" id="mo4">
+                  <input class="inputs my-narrow-input form-control" max="99" min="0" type="number" id="mo5">
+              </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" onclick="adiciona()" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="exibe" tabindex="-1" role="dialog">
+<div class="modal-dialog" role="document">
+<div class="modal-content">
+  <div class="modal-header">
+    <h5 class="modal-title">Modal title</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body" id="exibe_body">
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" onclick="adiciona()" class="btn btn-primary">Save changes</button>
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+  </div>
+</div>
+</div>
+</div>
+
+    <!-- /.modal -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2017</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bingo.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>
